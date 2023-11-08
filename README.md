@@ -17,7 +17,7 @@ HHA 504 Week 6 Assignment
 8. Log into the Azure Portal using this link: https://azure.microsoft.com/en-us/get-started/azure-portal. Once logged in, using the Search bar, look up Storage Accounts. Open it and click Create. You can either use an existing resource group or create a new one, as well as a storage account name. Click create.
 9. Open the new storage account and on the left hand menu search for access keys. Copy the connection key and return to cloud shell.
 10. In the local.settings.json file, paste the connection key as the AzureWebJobsStorage setting.
-11. To start your app, type `func start` into the terminal/
+11. To start your app, type `func start` into the terminal.
 12. To create the API for your app in Azure, paste and modofy the following command: `az functionapp create --resource-group <your resource group name> --consumption-plan-location eastus --runtime python --runtime-version 3.9 --functions-version 4 --name <your app name> --os-type linux --storage-account <your storage account name>` If you recieve any error codes, ensure that your resource group name and storage account name match the ones on Azure.
 13. You will then have to finish publishing the API as it doesn't do it automatically. Paste and modify the following command: `func azure functionapp publish <your app name>`.
 14. You can now check on Azure if this was created correctly, it may take a minute to update on Azure. Once it is ready, copy the URL that will be provided.
