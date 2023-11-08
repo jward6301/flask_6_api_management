@@ -18,16 +18,14 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
     birthyear =  req.params.get('birthyear', '2000')   
     birthyear_real = int(birthyear)
     birthyear_analyzed = 2023 - birthyear_real
-
-    response_data = {
-        'Greeting': f'Hi {name} {lastname}',
-        'Age': f'Your analyzed age is {age_analyzed}',
-        'Birthyear': f'Your analyzed age based off of your birthyear is {birthyear_analyzed}'
-    }
-    
+   
     return func.HttpResponse(
-        json.dumps(response_data),
+        json.dumps(            
+        {'Greeting': f'Hi {name} {lastname}',
+        'Age': f'Your analyzed age is {age_analyzed}',
+        'Birthyear': f'Your analyzed age based off of your birthyear is {birthyear_analyzed}'}
+        ),
         status_code=200
         )
 
-# string for query = /api/hello?firstname=Frances&lastname=Smith&age=22&birthyear=2001
+# string for query = /api/hello?name=Frances&lastname=Smith&age=22&birthyear=2001
